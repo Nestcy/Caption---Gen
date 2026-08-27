@@ -1,0 +1,8 @@
+{
+  "name": "AI Marketing Caption Generator",
+  "description": "Generate AI-powered social media captions for multiple platforms using text descriptions and images in a clean web app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
