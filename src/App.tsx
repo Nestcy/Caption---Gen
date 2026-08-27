@@ -620,7 +620,8 @@ ${Object.entries(result.generated_posts || {})
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-              {Object.entries(result.generated_posts || {}).map(([platform, text], idx) => {
+              {Object.entries(result.generated_posts || {}).map(([platform, rawText], idx) => {
+                const text = String(rawText || '');
                 const isCopied = copiedKey === platform;
                 const charCount = text.length;
                 const hashtagCount = (text.match(/#[\w\u0590-\u05ff]+/g) || []).length;
@@ -708,7 +709,7 @@ ${Object.entries(result.generated_posts || {})
 
                 {showLogs && (
                   <div className="mt-3 pt-3 border-t border-neutral-800 space-y-1.5">
-                    {result.logs.map((log, i) => (
+                    {result.logs.map((log: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <span className="text-neutral-500">{i + 1}.</span>
                         <span>{log}</span>
